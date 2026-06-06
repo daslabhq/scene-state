@@ -221,6 +221,7 @@ If `externalId` is omitted, `id` doubles as the external id. This is fine for da
 | `id` | string | required | Plan-local handle. Used as `asset_id` in `schedules[i].anchors[]` (and elsewhere) to reference this asset. |
 | `type` | string | required | Asset type, e.g. `daslab/note`, `github/repository`, `modelsdev/account`. |
 | `name` | string | required | Display label. |
+| `description` | string | — | Secondary line shown under the name on cards/tiles. Stored on `assets.description`. |
 | `externalId` | string | — | Provider's native id. Stored on `assets.external_id`. |
 | `externalUrl` | string | — | "Open in browser" target. Stored on `assets.external_url`. |
 | `assetOwnerId` | string | — | DB id of the parent account asset whose credentials this asset uses. |

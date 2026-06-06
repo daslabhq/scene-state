@@ -120,6 +120,7 @@
               "id":           { "type": "string", "description": "Plan-local handle; doubles as default externalId. Applier derives DB id via assetId(sceneId, type, externalId)." },
               "type":         { "type": "string" },
               "name":         { "type": "string" },
+              "description":  { "type": "string", "description": "Secondary line shown under the asset name on cards/tiles." },
               "layer":        { "type": "string", "description": "Layer slug. Must reference a declared layer in `layers[]` (or the implicit `default`). Defaults to `default`." },
               "externalId":   { "type": "string", "description": "Provider's native id. Stored on assets.external_id." },
               "externalUrl":  { "type": "string" },
