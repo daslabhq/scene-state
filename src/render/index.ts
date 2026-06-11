@@ -4,6 +4,7 @@
 
 export { renderHTML }                    from "./html.js";
 export { renderMarkdown }                from "./markdown.js";
+export type { RenderOpts }               from "./markdown.js";
 export { renderText }                    from "./text.js";
 export { renderA2UI, toA2UIJSONL }       from "./a2ui.js";
 export type {

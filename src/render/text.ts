@@ -6,11 +6,11 @@
  */
 
 import type { WidgetData } from "../widgets.js";
-import { renderMarkdown } from "./markdown.js";
+import { renderMarkdown, type RenderOpts } from "./markdown.js";
 
-export function renderText(w: WidgetData): string {
+export function renderText(w: WidgetData, opts?: RenderOpts): string {
   // Reuse the Markdown renderer and strip Markdown syntax.
-  return renderMarkdown(w)
+  return renderMarkdown(w, opts)
     .replace(/^#+\s*/gm, "")        // headings
     .replace(/\*\*(.*?)\*\*/g, "$1") // bold
     .replace(/_(.*?)_/g, "$1")       // italic

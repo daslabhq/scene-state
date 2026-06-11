@@ -28,8 +28,9 @@ import { renderText }     from "./render/text.js";
 
 export type JSONSchema = Record<string, unknown>;
 
-/** Five-tier size system — matches Apple WidgetKit + Daslab WidgetSize. */
-export type ViewSize = "icon" | "small" | "medium" | "large" | "xlarge";
+/** Six-tier size system — matches Apple WidgetKit + Daslab WidgetSize.
+ *  `row` is the Apple-Notes-style full-width thin row (4×1). */
+export type ViewSize = "icon" | "row" | "small" | "medium" | "large" | "xlarge";
 
 /** Alias for Daslab's existing vocabulary — same values. */
 export type WidgetSize = ViewSize;
@@ -129,6 +130,7 @@ export function defineView<TState = unknown>(config: ViewDefConfig<TState>): Vie
       const ladder: ViewSize[] = (() => {
         switch (size) {
           case "icon":   return ["icon", "small", "medium"];
+          case "row":    return ["row", "small", "medium"];
           case "small":  return ["small", "medium"];
           case "medium": return ["medium"];
           case "large":  return ["large", "medium"];
@@ -221,6 +223,7 @@ export function truncate(s: string, n: number): string {
 export function viewSizeGrid(size: ViewSize): { cols: number; rows: number } {
   switch (size) {
     case "icon":   return { cols: 1, rows: 1 };
+    case "row":    return { cols: 4, rows: 1 };
     case "small":  return { cols: 2, rows: 2 };
     case "medium": return { cols: 4, rows: 2 };
     case "large":  return { cols: 4, rows: 4 };
